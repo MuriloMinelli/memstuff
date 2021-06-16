@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
     _initialize();
     SnackbarHelper.showDeleteMessage(
       context: context,
-      message: '${stuff.description} excluído!',
+      message: '${stuff.description} $kLabelDelet',
       onPressed: () => _onDeleteUndo(stuff),
     );
   }

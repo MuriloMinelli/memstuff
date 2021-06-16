@@ -63,24 +63,29 @@ class _DetailPageState extends State<DetailPage> {
           TextFormField(
             decoration: InputDecoration(
                 labelText: kLabelDescription,
-                icon: Icon(Icons.description_outlined, color:Color.alphaBlend(Colors.transparent, Colors.deepPurple[200]))
-                ),
+                icon: Icon(Icons.description_outlined,
+                    color: Color.alphaBlend(
+                        Colors.transparent, Colors.deepPurple[200]))),
             initialValue: widget.stuff?.description ?? '',
             onSaved: _controller.setDescription,
             validator: (text) => ValidatorHelper.isNotEmptyNumber(text),
           ),
           TextFormField(
             decoration: InputDecoration(
-                labelText: kLabelName, 
-                icon: Icon(Icons.person_outline, color:Color.alphaBlend(Colors.transparent, Colors.deepPurple[200]))),
+                labelText: kLabelName,
+                icon: Icon(Icons.person_outline,
+                    color: Color.alphaBlend(
+                        Colors.transparent, Colors.deepPurple[200]))),
             initialValue: widget.stuff?.contactName ?? '',
             onSaved: _controller.setName,
             validator: (text) => ValidatorHelper.isNotEmptyNumber(text),
           ),
           TextFormField(
             decoration: InputDecoration(
-                labelText: kLabelTelefone, 
-                icon: Icon(Icons.phone_android, color:Color.alphaBlend(Colors.transparent, Colors.deepPurple[200]))),
+                labelText: kLabelTelefone,
+                icon: Icon(Icons.phone_android,
+                    color: Color.alphaBlend(
+                        Colors.transparent, Colors.deepPurple[200]))),
             keyboardType: TextInputType.number,
             initialValue: widget.stuff?.phoneNumber ?? '',
             onSaved: _controller.setPhone,
@@ -124,12 +129,12 @@ class _DetailPageState extends State<DetailPage> {
     if (widget.stuff == null) {
       SnackbarHelper.showCreateMessage(
         context: context,
-        message: '${_controller.description} criado com sucesso!',
+        message: '${_controller.description} $KLabelCreate',
       );
     } else {
       SnackbarHelper.showUpdateMessage(
         context: context,
-        message: '${_controller.description} atualizado com sucesso!',
+        message: '${_controller.description} $KLabelUpdated',
       );
     }
   }
